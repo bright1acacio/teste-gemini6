@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identidade Vendedora - Método C.L.A.R.E.Z.A.™</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#050505',
+                            800: '#0a0a0a',
+                            700: '#121212',
+                            card: '#1a1a1a'
+                        },
+                        gold: {
+                            400: '#D4AF37',
+                            500: '#C5A028',
+                            600: '#B48F1F',
+                            glow: 'rgba(212, 175, 55, 0.2)'
+                        },
+                        cta: {
+                            DEFAULT: '#16a34a',
+                            hover: '#15803d'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'gradient-gold': 'linear-gradient(to right, #D4AF37, #F2D06B, #D4AF37)',
+                        'dark-gradient-bg': 'radial-gradient(circle at center, #1a1a1a 0%, #050505 100%)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #050505;
+            color: #e5e5e5;
+        }
+        
+        .text-gradient-gold {
+            background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .gold-border-bottom {
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .gold-glow {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+        }
+
+        .gold-outline-glow {
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
+            border-radius: 8px;
+        }
+
+        /* Smooth reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+    <!-- BLOCO 1 — HEADLINE + PROMESSA + MECANISMO + CTA -->
+    <header class="relative min-h-screen flex flex-col justify-center items-center text-center px-4 py-20 bg-dark-gradient-bg">
+        
+        <div class="max-w-5xl mx-auto space-y-8 z-10">
+            
+            <!-- Título Principal unificado como Logo/Branding -->
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold tracking-tight leading-tight">
+                <span class="text-gradient-gold drop-shadow-lg">IDENTIDADE VENDEDORA</span>
+            </h1>
+
+            <div class="h-px w-32 bg-gold-400 mx-auto opacity-50 my-8"></div>
+
+            <p class="text-lg md:text-2xl font-serif text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                Construa sua identidade vendedora e pare de depender da sorte para fechar vendas.
+            </p>
+
+            <p class="text-gray-400 font-sans max-w-xl mx-auto leading-relaxed">
+                Você não vende mais porque não sabe comunicar quem você é, o que entrega e por que alguém deveria te escolher.
+            </p>
+
+            <!-- Caixa de frases -->
+            <div class="space-y-2 py-8 px-8 font-serif text-xl md:text-2xl text-gray-200 bg-dark-card/40 gold-outline-glow max-w-xl mx-auto backdrop-blur-sm mb-10">
+                <p>Identidade gera clareza.</p>
+                <p class="text-gold-400">Clareza gera confiança.</p>
+                <p>Confiança gera autoridade.</p>
+                <p class="text-white font-bold">Autoridade gera venda.</p>
+            </div>
+
+            <div class="pt-4 flex flex-col items-center">
+                
+                <!-- Oferta Explicita -->
+                <div class="mb-6 text-center animate-fade-in-up">
+                    <p class="text-gray-500 font-sans text-sm line-through mb-1 uppercase tracking-wide">De R$ 297,00</p>
+                    <p class="text-5xl md:text-6xl font-serif text-white font-bold tracking-tight">R$ 99,00</p>
+                    <p class="text-gold-400 text-sm font-sans mt-2">Pagamento único • Acesso Vitalício</p>
+                </div>
+
+                <!-- Botão CTA Mais Visível e Aceso -->
+                <a href="#checkout" class="inline-block bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-sans font-bold py-5 px-10 md:px-14 rounded-full text-xl md:text-2xl transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(34,197,94,0.5)] border border-green-400/50 mb-4 relative overflow-hidden group">
+                    <span class="relative z-10">VAI SEM MEDO — GARANTIR ACESSO AGORA</span>
+                    <div class="absolute inset-0 h-full w-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
+                </a>
+                <p class="text-xs text-gray-500 uppercase tracking-wider font-sans mt-3">
+                    Acesso imediato • Conteúdo vitalício • Garantia de 7 dias
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- BLOCO 2 — PERGUNTA DE IDENTIFICAÇÃO -->
+    <section class="py-16 bg-dark-800 px-4">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-serif text-white mb-12">Me diz se você é assim:</h2>
+            
+            <div class="grid gap-4 text-left max-w-xl mx-auto mb-12">
+                <div class="flex items-start p-4 bg-dark-card border border-white/5 rounded-lg hover:border-gold-400/30 transition-colors">
+                    <i class="fa-solid fa-xmark text-red-500 mt-1 mr-4"></i>
+                    <p class="text-gray-300 font-sans">já vende, mas não tem identidade clara</p>
+                </div>
+                <div class="flex items-start p-4 bg-dark-card border border-white/5 rounded-lg hover:border-gold-400/30 transition-colors">
+                    <i class="fa-solid fa-xmark text-red-500 mt-1 mr-4"></i>
+                    <p class="text-gray-300 font-sans">sente que ainda parece amador</p>
+                </div>
+                <div class="flex items-start p-4 bg-dark-card border border-white/5 rounded-lg hover:border-gold-400/30 transition-colors">
+                    <i class="fa-solid fa-xmark text-red-500 mt-1 mr-4"></i>
+                    <p class="text-gray-300 font-sans">trava ao se comunicar</p>
+                </div>
+                <div class="flex items-start p-4 bg-dark-card border border-white/5 rounded-lg hover:border-gold-400/30 transition-colors">
+                    <i class="fa-solid fa-xmark text-red-500 mt-1 mr-4"></i>
+                    <p class="text-gray-300 font-sans">não sabe explicar o que faz</p>
+                </div>
+                <div class="flex items-start p-4 bg-dark-card border border-white/5 rounded-lg hover:border-gold-400/30 transition-colors">
+                    <i class="fa-solid fa-xmark text-red-500 mt-1 mr-4"></i>
+                    <p class="text-gray-300 font-sans">vende sem método</p>
+                </div>
+                <div class="flex items-start p-4 bg-dark-card border border-white/5 rounded-lg hover:border-gold-400/30 transition-colors">
+                    <i class="fa-solid fa-xmark text-red-500 mt-1 mr-4"></i>
+                    <p class="text-gray-300 font-sans">fecha pouco</p>
+                </div>
+                <div class="flex items-start p-4 bg-dark-card border border-white/5 rounded-lg hover:border-gold-400/30 transition-colors">
+                    <i class="fa-solid fa-xmark text-red-500 mt-1 mr-4"></i>
+                    <p class="text-gray-300 font-sans">depende da sorte e improviso</p>
+                </div>
+                <div class="flex items-start p-4 bg-dark-card border border-white/5 rounded-lg hover:border-gold-400/30 transition-colors">
+                    <i class="fa-solid fa-xmark text-red-500 mt-1 mr-4"></i>
+                    <p class="text-gray-300 font-sans">sabe que pode ganhar mais, mas falta clareza</p>
+                </div>
+            </div>
+
+            <a href="#checkout" class="inline-block border border-cta text-cta hover:bg-cta hover:text-white font-sans font-semibold py-3 px-8 rounded-full transition-all duration-300 mb-8 text-sm uppercase tracking-wide">
+                SIM, EU ME VEJO AQUI
+            </a>
+
+            <p class="text-xl md:text-2xl font-serif italic text-gold-400">
+                “Se você se identificou com qualquer ponto, então o IDENTIDADE VENDEDORA é sua primeira etapa.”
+            </p>
+        </div>
+    </section>
+
+    <!-- BLOCO 3 — HISTÓRIA OBJETIVA (COM FOTO INTEGRADA) -->
+    <section class="py-24 bg-dark-900 px-4 border-t border-white/5 relative overflow-hidden">
+        
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-20">
+            
+            <!-- Coluna da Imagem (Visual Fluido) -->
+            <div class="w-full md:w-5/12 relative order-1 md:order-1">
+                <!-- Efeito de moldura deslocada para estilo -->
+                <div class="absolute top-4 -left-4 w-full h-full border border-gold-400/20 rounded-2xl -z-10 hidden md:block"></div>
+                
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/5 group">
+                    <!-- FOTO DO ESPECIALISTA (PLACEHOLDER) -->
+                    <!-- Troque a URL abaixo pela sua foto real -->
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=987&auto=format&fit=crop" 
+                         alt="Fundador do Método Clareza" 
+                         class="w-full h-auto object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-105">
+                    
+                    <!-- Gradiente sutil na base para integrar com o fundo dark -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900/80 via-transparent to-transparent opacity-60"></div>
+                </div>
+            </div>
+
+            <!-- Coluna de Texto -->
+            <div class="w-full md:w-7/12 space-y-6 text-lg font-sans text-gray-300 leading-relaxed order-2 md:order-2">
+                <h2 class="text-3xl md:text-5xl font-serif text-white mb-6 leading-tight">
+                    Por que eu criei o <br>
+                    <span class="text-gradient-gold">Identidade Vendedora</span>
+                </h2>
+                
+                <p>Por anos, eu vendia bem, mas comunicava mal.</p>
+                <p>Eu entregava muito, mas parecia pouco.</p>
+                <p>E por isso perdia clientes, oportunidades e autoridade.</p>
+                
+                <div class="pl-6 border-l-2 border-gold-400/50 italic text-gray-400 my-8 py-2">
+                    <p class="mb-4">Tentei métodos e scripts de outras pessoas.</p>
+                    <p class="mb-4">Nada encaixava.</p>
+                    <p>Eu me sentia preso, com a sensação de que meu potencial não aparecia.</p>
+                </div>
+
+                <p>Até que eu descobri o que faltava: <strong class="text-white font-medium">identidade.</strong></p>
+                <p>Quando alinhei quem eu era com a maneira como me comunicava, tudo mudou.</p>
+                
+                <div class="bg-dark-card p-8 rounded-xl border border-gold-400/20 mt-8 shadow-lg relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-gold-400"></div>
+                    <p class="font-serif text-2xl text-white mb-3">O IDENTIDADE VENDEDORA nasceu para isso:</p>
+                    <p class="text-gold-400 text-lg">destravá-lo da comunicação travada e te colocar no caminho certo — com clareza, identidade e consistência.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- BLOCO 4 — TENTATIVAS FRUSTRADAS -->
+    <section class="py-20 bg-dark-800 px-4">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-serif text-white mb-8">Por que os outros métodos não funcionaram para você</h2>
+            
+            <p class="text-xl text-gray-300 mb-8 font-serif italic">
+                Porque eles tentam resolver o sintoma (técnica),<br>
+                mas ignoram a raiz (identidade e comunicação).
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-8 my-12">
+                <div class="p-6 border border-red-900/30 bg-red-900/5 rounded-lg">
+                    <p class="text-red-400 font-medium">Outros Métodos</p>
+                    <p class="text-gray-400 mt-2 text-sm">Nada funciona se você não sabe comunicar quem você é.</p>
+                </div>
+                <div class="p-6 border border-gold-400/30 bg-gold-400/5 rounded-lg">
+                    <p class="text-gold-400 font-medium">Identidade Vendedora</p>
+                    <p class="text-gray-400 mt-2 text-sm">Aqui não tem fórmula engessada, script pronto ou promessa vazia.</p>
+                </div>
+            </div>
+
+            <p class="text-2xl font-serif text-white">Tem clareza, estrutura e verdade.</p>
+        </div>
+    </section>
+
+    <!-- BLOCO 5 — A GRANDE DESCOBERTA -->
+    <section class="py-20 bg-dark-900 px-4 relative overflow-hidden">
+        <!-- Decorative background element -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gold-400/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-3xl mx-auto relative z-10 text-center space-y-8">
+            <h2 class="text-3xl md:text-4xl font-serif text-white">A grande descoberta que mudou tudo para mim</h2>
+            
+            <p class="text-gray-300 text-lg leading-relaxed">
+                Quando entendi que identidade vem antes da técnica, eu parei de parecer amador e comecei a vender com naturalidade.
+            </p>
+
+            <p class="text-gray-300 text-lg leading-relaxed">
+                E essa base se conecta com algo maior: o <span class="text-gold-400 font-serif font-bold">Método C.L.A.R.E.Z.A.™</span>, minha metodologia principal que estrutura todo o meu ecossistema.
+            </p>
+
+            <div class="my-12 p-8 bg-dark-card border-y border-gold-400/30">
+                <p class="text-xl font-serif text-white mb-6">No IDENTIDADE VENDEDORA você dá o primeiro passo:</p>
+                <div class="space-y-4 font-sans text-gray-300">
+                    <p class="flex items-center justify-center gap-2"><i class="fa-solid fa-star text-gold-500 text-xs"></i> a base do método.</p>
+                    <p class="flex items-center justify-center gap-2"><i class="fa-solid fa-star text-gold-500 text-xs"></i> A introdução ao universo.</p>
+                    <p class="flex items-center justify-center gap-2"><i class="fa-solid fa-star text-gold-500 text-xs"></i> A etapa inicial da jornada rumo ao Empresário Livre.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOCO 6 — O QUE VOCÊ VAI APRENDER -->
+    <section class="py-20 bg-dark-800 px-4">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-4xl font-serif text-center text-white mb-16">O que você vai aprender</h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Módulo 1 -->
+                <div class="bg-dark-card p-8 rounded-lg border border-white/5 hover:border-gold-400/30 transition-all duration-300 group">
+                    <div class="text-gold-400 text-xs tracking-widest uppercase mb-3">Módulo 1</div>
+                    <h3 class="text-2xl font-serif text-white font-medium mb-3 group-hover:text-gold-400 transition-colors">Boas-vindas ao Método Clareza</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">A fundação da clareza que transforma sua comunicação e postura.</p>
+                </div>
+
+                <!-- Módulo 2 -->
+                <div class="bg-dark-card p-8 rounded-lg border border-white/5 hover:border-gold-400/30 transition-all duration-300 group">
+                    <div class="text-gold-400 text-xs tracking-widest uppercase mb-3">Módulo 2</div>
+                    <h3 class="text-2xl font-serif text-white font-medium mb-3 group-hover:text-gold-400 transition-colors">A Tríade da Liberdade</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Como mente, corpo e alma moldam sua presença e identidade.</p>
+                </div>
+
+                <!-- Módulo 3 -->
+                <div class="bg-dark-card p-8 rounded-lg border border-white/5 hover:border-gold-400/30 transition-all duration-300 group">
+                    <div class="text-gold-400 text-xs tracking-widest uppercase mb-3">Módulo 3</div>
+                    <h3 class="text-2xl font-serif text-white font-medium mb-3 group-hover:text-gold-400 transition-colors">Antes de Vender</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Quem é você como profissional, sua essência e sua comunicação.</p>
+                </div>
+
+                <!-- Módulo 4 -->
+                <div class="bg-dark-card p-8 rounded-lg border border-white/5 hover:border-gold-400/30 transition-all duration-300 group">
+                    <div class="text-gold-400 text-xs tracking-widest uppercase mb-3">Módulo 4</div>
+                    <h3 class="text-2xl font-serif text-white font-medium mb-3 group-hover:text-gold-400 transition-colors">Vendendo Mais</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Método, técnica e condução para comunicar e fechar com consistência.</p>
+                </div>
+
+                <!-- Módulo 5 -->
+                <div class="bg-dark-card p-8 rounded-lg border border-white/5 hover:border-gold-400/30 transition-all duration-300 group">
+                    <div class="text-gold-400 text-xs tracking-widest uppercase mb-3">Módulo 5</div>
+                    <h3 class="text-2xl font-serif text-white font-medium mb-3 group-hover:text-gold-400 transition-colors">Ferramentas Práticas</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Notion, CRM, ChatGPT e papel para acelerar sua rotina comercial.</p>
+                </div>
+
+                <!-- Módulo 6 -->
+                <div class="bg-dark-card p-8 rounded-lg border border-white/5 hover:border-gold-400/30 transition-all duration-300 group">
+                    <div class="text-gold-400 text-xs tracking-widest uppercase mb-3">Módulo 6</div>
+                    <h3 class="text-2xl font-serif text-white font-medium mb-3 group-hover:text-gold-400 transition-colors">Bônus de Aceleração</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Mapas mentais e prompts que tornam a aplicação imediata.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOCO 7 — O QUE VOCÊ VAI RECEBER -->
+    <section class="py-20 bg-dark-900 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-serif text-white mb-12">Você recebe:</h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="bg-dark-800 p-6 rounded border border-white/5 flex flex-col items-center gap-4">
+                    <i class="fa-solid fa-unlock text-gold-400 text-2xl"></i>
+                    <span class="text-sm font-sans text-gray-300">acesso completo ao conteúdo</span>
+                </div>
+                <div class="bg-dark-800 p-6 rounded border border-white/5 flex flex-col items-center gap-4">
+                    <i class="fa-solid fa-layer-group text-gold-400 text-2xl"></i>
+                    <span class="text-sm font-sans text-gray-300">todos os módulos liberados</span>
+                </div>
+                <div class="bg-dark-800 p-6 rounded border border-white/5 flex flex-col items-center gap-4">
+                    <i class="fa-solid fa-sitemap text-gold-400 text-2xl"></i>
+                    <span class="text-sm font-sans text-gray-300">mapas mentais</span>
+                </div>
+                <div class="bg-dark-800 p-6 rounded border border-white/5 flex flex-col items-center gap-4">
+                    <i class="fa-solid fa-toolbox text-gold-400 text-2xl"></i>
+                    <span class="text-sm font-sans text-gray-300">ferramentas práticas</span>
+                </div>
+                <div class="bg-dark-800 p-6 rounded border border-white/5 flex flex-col items-center gap-4">
+                    <i class="fa-solid fa-list-check text-gold-400 text-2xl"></i>
+                    <span class="text-sm font-sans text-gray-300">exercícios e checklists</span>
+                </div>
+                <div class="bg-dark-800 p-6 rounded border border-white/5 flex flex-col items-center gap-4">
+                    <i class="fa-solid fa-infinity text-gold-400 text-2xl"></i>
+                    <span class="text-sm font-sans text-gray-300">acesso vitalício</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOCO 8 — COMO FUNCIONA A JORNADA -->
+    <section class="py-20 bg-dark-800 px-4">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-serif text-white mb-12 text-center">Como funciona na prática</h2>
+            
+            <div class="space-y-6 relative border-l border-gold-400/20 ml-6 md:ml-12 pl-8 md:pl-12 py-4">
+                <div class="relative">
+                    <div class="absolute -left-[41px] md:-left-[57px] top-1 w-6 h-6 rounded-full bg-dark-900 border border-gold-400 flex items-center justify-center">
+                        <span class="w-2 h-2 rounded-full bg-gold-400"></span>
+                    </div>
+                    <p class="text-gray-300">Você entra e acessa tudo imediatamente</p>
+                </div>
+                <div class="relative">
+                    <div class="absolute -left-[41px] md:-left-[57px] top-1 w-6 h-6 rounded-full bg-dark-900 border border-gold-400 flex items-center justify-center">
+                        <span class="w-2 h-2 rounded-full bg-gold-400"></span>
+                    </div>
+                    <p class="text-gray-300">Descobre quem você é como profissional</p>
+                </div>
+                <div class="relative">
+                    <div class="absolute -left-[41px] md:-left-[57px] top-1 w-6 h-6 rounded-full bg-dark-900 border border-gold-400 flex items-center justify-center">
+                        <span class="w-2 h-2 rounded-full bg-gold-400"></span>
+                    </div>
+                    <p class="text-gray-300">Ajusta sua comunicação</p>
+                </div>
+                <div class="relative">
+                    <div class="absolute -left-[41px] md:-left-[57px] top-1 w-6 h-6 rounded-full bg-dark-900 border border-gold-400 flex items-center justify-center">
+                        <span class="w-2 h-2 rounded-full bg-gold-400"></span>
+                    </div>
+                    <p class="text-gray-300">Aplica o método</p>
+                </div>
+                <div class="relative">
+                    <div class="absolute -left-[41px] md:-left-[57px] top-1 w-6 h-6 rounded-full bg-dark-900 border border-gold-400 flex items-center justify-center">
+                        <span class="w-2 h-2 rounded-full bg-gold-400"></span>
+                    </div>
+                    <p class="text-gray-300">Passa a vender com clareza e segurança</p>
+                </div>
+                <div class="relative">
+                    <div class="absolute -left-[41px] md:-left-[57px] top-1 w-6 h-6 rounded-full bg-dark-900 border border-gold-400 flex items-center justify-center">
+                        <span class="w-2 h-2 rounded-full bg-gold-400"></span>
+                    </div>
+                    <p class="text-white font-semibold">Evolui dentro do ecossistema rumo ao Empresário Livre</p>
+                </div>
+            </div>
+
+            <p class="text-center text-xl font-serif text-gold-400 mt-12 italic">“E isso é só o começo.”</p>
+        </div>
+    </section>
+
+    <!-- BLOCO 9 — BÔNUS (VALOR PERCEBIDO AUMENTADO - EMPILHAMENTO) -->
+    <section class="py-24 bg-dark-900 px-4 relative overflow-hidden">
+        
+        <!-- Glow de fundo para destacar o valor (Aumentado para cobrir a área maior) -->
+        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-lg h-[120%] bg-gold-400/5 blur-[120px] pointer-events-none rounded-full"></div>
+
+        <div class="max-w-3xl mx-auto relative z-10 space-y-10">
+            
+            <!-- BÔNUS 1: MAPA MENTAL -->
+            <div class="border border-gold-400/30 rounded-2xl p-8 md:p-14 relative bg-dark-card shadow-2xl transform hover:scale-[1.01] transition-transform duration-500 overflow-visible group">
+                
+                <!-- Badge Superior -->
+                <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-gold-500 to-gold-600 text-black font-bold px-8 py-2 rounded-full text-sm uppercase tracking-widest shadow-lg shadow-gold-500/20 flex items-center gap-2 whitespace-nowrap z-20">
+                    <i class="fa-solid fa-star text-xs"></i> Bônus Exclusivo 1
+                </div>
+                
+                <div class="mt-6 text-center relative z-10">
+                    <h3 class="text-3xl md:text-4xl font-serif text-white mb-6 leading-tight">
+                        Mapa Mental do <br>
+                        <span class="text-gradient-gold">Método C.L.A.R.E.Z.A.™</span>
+                    </h3>
+                    
+                    <p class="text-gray-300 mb-10 leading-relaxed max-w-lg mx-auto text-lg">
+                        O guia visual definitivo que te impede de travar e te coloca em <strong class="text-white">execução imediata</strong>.
+                    </p>
+
+                    <!-- Caixa de Valor Ancorado -->
+                    <div class="flex flex-col items-center justify-center p-6 bg-dark-900/80 rounded-xl border border-gold-400/20 backdrop-blur-sm mx-auto max-w-sm relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                        <span class="text-gray-500 text-xs font-sans uppercase tracking-wide mb-1">Vendido separadamente por</span>
+                        <span class="text-red-400/70 line-through text-xl mb-3 font-serif">R$ 49,00</span>
+                        <div class="w-2/3 h-px bg-white/10 my-3"></div>
+                        <div class="flex flex-col items-center gap-1">
+                            <span class="text-gray-300 text-sm">Nesta oferta sai por:</span>
+                            <span class="text-green-400 font-bold text-3xl uppercase tracking-wider flex items-center gap-2 animate-pulse">
+                                R$ 0,00
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BÔNUS 2: CHECKLISTS E EXERCÍCIOS -->
+            <div class="border border-gold-400/30 rounded-2xl p-8 md:p-14 relative bg-dark-card shadow-2xl transform hover:scale-[1.01] transition-transform duration-500 overflow-visible group">
+                
+                <!-- Badge Superior -->
+                <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-gray-200 to-gray-400 text-dark-900 font-bold px-8 py-2 rounded-full text-sm uppercase tracking-widest shadow-lg shadow-white/10 flex items-center gap-2 whitespace-nowrap z-20">
+                    <i class="fa-solid fa-list-check text-xs"></i> Bônus Exclusivo 2
+                </div>
+                
+                <div class="mt-6 text-center relative z-10">
+                    <h3 class="text-3xl md:text-4xl font-serif text-white mb-6 leading-tight">
+                        Checklists e <br>
+                        <span class="text-gray-200 italic">Exercícios de Fixação</span>
+                    </h3>
+                    
+                    <p class="text-gray-300 mb-10 leading-relaxed max-w-lg mx-auto text-lg">
+                        O passo a passo prático para garantir que você não apenas estude, mas <strong class="text-white">aplique e tenha resultados</strong>.
+                    </p>
+
+                    <!-- Caixa de Valor Ancorado -->
+                    <div class="flex flex-col items-center justify-center p-6 bg-dark-900/80 rounded-xl border border-white/10 backdrop-blur-sm mx-auto max-w-sm relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                        <span class="text-gray-500 text-xs font-sans uppercase tracking-wide mb-1">Vendido separadamente por</span>
+                        <span class="text-red-400/70 line-through text-xl mb-3 font-serif">R$ 29,00</span>
+                        <div class="w-2/3 h-px bg-white/10 my-3"></div>
+                        <div class="flex flex-col items-center gap-1">
+                            <span class="text-gray-300 text-sm">Nesta oferta sai por:</span>
+                            <span class="text-green-400 font-bold text-3xl uppercase tracking-wider flex items-center gap-2 animate-pulse">
+                                R$ 0,00
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BÔNUS 3: FERRAMENTAS PRÁTICAS -->
+            <div class="border border-gold-400/30 rounded-2xl p-8 md:p-14 relative bg-dark-card shadow-2xl transform hover:scale-[1.01] transition-transform duration-500 overflow-visible group">
+                
+                <!-- Badge Superior -->
+                <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-gold-500 to-gold-600 text-black font-bold px-8 py-2 rounded-full text-sm uppercase tracking-widest shadow-lg shadow-gold-500/20 flex items-center gap-2 whitespace-nowrap z-20">
+                    <i class="fa-solid fa-toolbox text-xs"></i> Bônus Exclusivo 3
+                </div>
+                
+                <div class="mt-6 text-center relative z-10">
+                    <h3 class="text-3xl md:text-4xl font-serif text-white mb-6 leading-tight">
+                        Pack de <br>
+                        <span class="text-gradient-gold">Ferramentas Práticas</span>
+                    </h3>
+                    
+                    <p class="text-gray-300 mb-10 leading-relaxed max-w-lg mx-auto text-lg">
+                        Templates de Notion, CRM e Prompts de ChatGPT prontos para você <strong class="text-white">copiar, colar e vender</strong>.
+                    </p>
+
+                    <!-- Caixa de Valor Ancorado -->
+                    <div class="flex flex-col items-center justify-center p-6 bg-dark-900/80 rounded-xl border border-gold-400/20 backdrop-blur-sm mx-auto max-w-sm relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                        <span class="text-gray-500 text-xs font-sans uppercase tracking-wide mb-1">Vendido separadamente por</span>
+                        <span class="text-red-400/70 line-through text-xl mb-3 font-serif">R$ 47,00</span>
+                        <div class="w-2/3 h-px bg-white/10 my-3"></div>
+                        <div class="flex flex-col items-center gap-1">
+                            <span class="text-gray-300 text-sm">Nesta oferta sai por:</span>
+                            <span class="text-green-400 font-bold text-3xl uppercase tracking-wider flex items-center gap-2 animate-pulse">
+                                R$ 0,00
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- BLOCO 10 — EMPILHAMENTO FINAL & BLOCO 11 — PREÇO -->
+    <section id="checkout" class="py-20 bg-dark-800 px-4">
+        <div class="max-w-3xl mx-auto text-center">
+            
+            <div class="mb-16">
+                <h2 class="text-3xl font-serif text-white mb-8">Você leva:</h2>
+                <ul class="space-y-4 text-left inline-block mx-auto">
+                    <li class="flex items-center text-gray-200">
+                        <i class="fa-solid fa-check text-gold-400 mr-3"></i> IDENTIDADE VENDEDORA
+                    </li>
+                    <li class="flex items-center text-gray-200">
+                        <i class="fa-solid fa-check text-gold-400 mr-3"></i> Bônus Mapa Mental
+                    </li>
+                    <li class="flex items-center text-gray-200">
+                        <i class="fa-solid fa-check text-gold-400 mr-3"></i> Checklists e exercícios
+                    </li>
+                    <li class="flex items-center text-gray-200">
+                        <i class="fa-solid fa-check text-gold-400 mr-3"></i> Ferramentas práticas
+                    </li>
+                    <li class="flex items-center text-gray-200">
+                        <i class="fa-solid fa-check text-gold-400 mr-3"></i> Acesso vitalício
+                    </li>
+                    <li class="flex items-center text-gray-200">
+                        <i class="fa-solid fa-check text-gold-400 mr-3"></i> Primeira etapa do ecossistema Empresário Livre
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Preço -->
+            <div class="bg-dark-card border border-white/10 rounded-2xl p-8 md:p-12 shadow-2xl">
+                <p class="text-gray-400 text-sm mb-2">Tudo isso por apenas</p>
+                <div class="flex flex-col items-center mb-2">
+                    <p class="text-gray-500 line-through font-sans text-lg mb-1">DE R$ 297,00</p>
+                    <div class="text-5xl md:text-7xl font-serif text-white font-bold tracking-tight">R$ 99,00</div>
+                </div>
+                
+                <div class="flex flex-col md:flex-row justify-center gap-4 text-sm text-gray-400 mt-6 mb-10">
+                    <span>Sem mensalidade.</span>
+                    <span class="hidden md:inline">•</span>
+                    <span>Sem taxas.</span>
+                    <span class="hidden md:inline">•</span>
+                    <span>Acesso imediato.</span>
+                </div>
+
+                <!-- BLOCO 12 — BOTÃO DE COMPRA (ATUALIZADO) -->
+                <a href="#" class="block w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-sans font-bold py-5 rounded-full text-xl md:text-2xl transition-all duration-300 transform hover:scale-[1.02] shadow-[0_0_30px_rgba(34,197,94,0.5)] border border-green-400/50 relative overflow-hidden group">
+                    <span class="relative z-10">VAI SEM MEDO — COMPRAR AGORA</span>
+                    <div class="absolute inset-0 h-full w-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
+                </a>
+                
+                <div class="flex items-center justify-center gap-2 mt-4 text-xs text-gray-500 uppercase tracking-wide">
+                    <i class="fa-solid fa-lock"></i> Acesso imediato • Garantia de 7 dias
+                </div>
+            </div>
+
+            <!-- BLOCO 13 — GARANTIA -->
+            <div class="mt-16 flex flex-col items-center justify-center">
+                <div class="w-16 h-16 border-2 border-gold-400 rounded-full flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-shield-halved text-gold-400 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-serif text-white mb-2">Garantia incondicional de 7 dias</h3>
+                <p class="text-gray-400 max-w-md">Se o conteúdo não te entregar clareza, devolvemos seu dinheiro.</p>
+                <p class="text-gray-400 mt-2 text-sm">Sem burocracia.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="py-8 bg-dark-900 border-t border-white/5 text-center">
+        <p class="text-gray-600 text-xs font-sans">
+            &copy; 2025 Empresário Livre. Todos os direitos reservados.
+        </p>
+    </footer>
+
+    <script>
+        // Simple reveal animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        });
+
+        const hiddenElements = document.querySelectorAll('.reveal');
+        hiddenElements.forEach((el) => observer.observe(el));
+    </script>
+</body>
+</html>
